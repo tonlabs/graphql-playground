@@ -21,7 +21,7 @@ yarn run build
 # Release the @apollographql/graphql-playground-react package.
 ./scripts/release-react.sh
 
-# Release the @apollographql/graphql-playground-react package.
+# Release the @apollographql/graphql-playground-html package.
 ./scripts/release-html.sh
 
 # Add the package files that were version bumped.
