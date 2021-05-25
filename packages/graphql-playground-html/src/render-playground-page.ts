@@ -124,13 +124,7 @@ export function renderPlaygroundPage(options: RenderPageOptions) {
   if (options.config) {
     extendedOptions.configString = JSON.stringify(options.config, null, 2)
   }
-  if (!extendedOptions.endpoint && !extendedOptions.configString) {
-    /* tslint:disable-next-line */
-    console.warn(
-      `WARNING: You didn't provide an endpoint and don't have a .graphqlconfig. Make sure you have at least one of them.`,
-    )
-  }
-  else if (extendedOptions.endpoint) {
+  if (extendedOptions.endpoint) {
     extendedOptions.endpoint = filter(extendedOptions.endpoint || '')
   }
 
