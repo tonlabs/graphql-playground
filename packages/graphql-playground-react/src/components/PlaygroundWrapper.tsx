@@ -152,15 +152,23 @@ class PlaygroundWrapper extends React.Component<
     if (splitted.length === 1) {
       return { endpoint }
     }
+    let mainEndpoint = splitted[0]
     try {
+      // Special case to make apollo-server-azure-functions work
+      // out of the box: preserve 'code' parameter.
+      const code = getParameterByName('code', endpoint)
+      if (code) {
+        mainEndpoint = `${mainEndpoint}?code=${encodeURIComponent(code)}`
+      }
+
       const headers = getParameterByName('headers', endpoint)
       if (headers) {
-        return { headers: JSON.parse(headers), endpoint: splitted[0] }
+        return { headers: JSON.parse(headers), endpoint: mainEndpoint }
       }
     } catch (e) {
       //
     }
-    return { endpoint: splitted[0] }
+    return { endpoint: mainEndpoint }
   }
 
   removeLoader() {
