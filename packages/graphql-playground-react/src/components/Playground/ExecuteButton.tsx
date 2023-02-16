@@ -228,9 +228,9 @@ const Button = styled<ButtonProps, 'div'>('div')`
 
   &:hover {
     background-color: ${p =>
-      p.isRunning
-        ? p.theme.editorColours.executeButtonSubscriptionHover
-        : p.theme.editorColours.executeButtonHover};
+    p.isRunning
+      ? p.theme.editorColours.executeButtonSubscriptionHover
+      : p.theme.editorColours.executeButtonHover};
   }
 `
 

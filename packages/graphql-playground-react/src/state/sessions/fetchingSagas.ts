@@ -133,6 +133,12 @@ function* runQuerySaga(action) {
     // recommended: https://www.mnot.net/blog/2009/02/18/x-
     headers = set(headers, 'Apollo-Query-Plan-Experimental', '1')
   }
+  // Set subscribeEndpoint equal to session.endpoint,
+  // but the protocol (ws or wss) must remain
+  subscriptionEndpoint = [
+    subscriptionEndpoint.split(":")[0],
+    session.endpoint.split(":")[1]
+  ].join(":")
 
   const lol = {
     endpoint: session.endpoint,

@@ -100,8 +100,8 @@ const getCdnMarkup = ({ version, cdnUrl = '//cdn.jsdelivr.net/npm', faviconUrl }
     ${typeof faviconUrl === 'string' ? `<link rel="shortcut icon" href="${filter(faviconUrl || '')}" />` : ''}
     ${faviconUrl === undefined ? `<link rel="shortcut icon" href="${buildCDNUrl(reactPackageName, 'build/favicon.png')}" />` : ''}
     <script
-      src="${buildCDNUrl(reactPackageName, 'build/static/js/middleware.js')}"
-    ></script>
+      src="/graphql/static/js/middleware.js"
+    ></script
 `}
 
 
