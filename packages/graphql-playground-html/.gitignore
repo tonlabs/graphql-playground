@@ -8,8 +8,6 @@ example/yarn.lock
 # testing
 /coverage
 
-# production
-/dist
 
 # misc
 .DS_Store
